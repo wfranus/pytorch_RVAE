@@ -64,9 +64,9 @@ if __name__ == "__main__":
             print('----------ITERATION-----------')
             print(iteration)
             print('--------CROSS-ENTROPY---------')
-            print(cross_entropy.data.cpu().numpy()[0])
+            print(cross_entropy.data.cpu().numpy())
             print('-------------KLD--------------')
-            print(kld.data.cpu().numpy()[0])
+            print(kld.data.cpu().numpy())
             print('-----------KLD-coef-----------')
             print(coef)
             print('------------------------------')
@@ -74,8 +74,8 @@ if __name__ == "__main__":
         if iteration % 10 == 0:
             cross_entropy, kld = validate(args.batch_size, args.use_cuda)
 
-            cross_entropy = cross_entropy.data.cpu().numpy()[0]
-            kld = kld.data.cpu().numpy()[0]
+            cross_entropy = cross_entropy.data.cpu().numpy()
+            kld = kld.data.cpu().numpy()
 
             print('\n')
             print('------------VALID-------------')
